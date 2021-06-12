@@ -1,0 +1,17 @@
+h1 {
+  @apply z-10;
+}
+
+.image {
+  background-image: url("/images/pexels-batın-özen-7615194.jpg");
+  @apply bg-cover bg-center w-full h-full absolute z-0;
+}
+
+.blurryload {
+  text-shadow: 1px 1px 0px #ffffff;
+  @apply bg-black text-6xl font-bold;
+}
+
+.loadpercent {
+  @apply z-10 text-purple-600;
+}

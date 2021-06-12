@@ -1,0 +1,35 @@
+.expander {
+  @apply bg-gradient-to-tr from-blue-900 to-blue-600 md:space-x-5;
+
+  & .cards {
+    @apply flex;
+
+    & > div {
+      @apply w-20 h-[60vh] border-2 bg-cover bg-center transition-all duration-500 cursor-pointer;
+
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        @apply hidden md:block;
+      }
+    }
+    & > .active {
+      @apply w-[40vw];
+    }
+  }
+
+  & .image1 {
+    background-image: url("/images/pexels-anna-alexes-7385627.jpg");
+  }
+  & .image2 {
+    background-image: url("/images/pexels-batın-özen-7615194.jpg");
+  }
+  & .image3 {
+    background-image: url("/images/pexels-batın-özen-7684196.jpg");
+  }
+  & .image4 {
+    background-image: url("/images/pexels-dmitriy-ganin-7789180.jpg");
+  }
+  & .image5 {
+    background-image: url("/images/pexels-lehandross-2953473.jpg");
+  }
+}

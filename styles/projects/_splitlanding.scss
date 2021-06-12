@@ -1,0 +1,43 @@
+.splitlanding {
+  @apply flex flex-col md:flex-row items-center justify-center w-full h-full bg-pink-900 text-white;
+
+  & .left,
+  & .right {
+    @apply w-full md:w-[50%] h-[50%] md:h-full flex flex-col items-center justify-center transform transition-all duration-500 bg-cover bg-center bg-blend-overlay;
+
+    &:hover,
+    &:focus,
+    &:active {
+      @apply h-[75%] md:h-full md:w-[75%] bg-blend-soft-light;
+    }
+
+    & button {
+      @apply flex items-center justify-center border-2 px-5 py-2 font-bold text-4xl uppercase;
+    }
+  }
+
+  & .left {
+    background-image: url("/images/splitlanding/pexels-engin-akyurt-3620233.jpg");
+    @apply bg-blue-800;
+    & button {
+      @apply bg-red-500;
+      &:hover,
+      &:focus,
+      &:active {
+        @apply bg-red-600 text-red-50;
+      }
+    }
+  }
+  & .right {
+    background-image: url("/images/splitlanding/pexels-horizon-content-3915857.jpg");
+    @apply bg-red-900;
+    & button {
+      @apply bg-blue-500;
+      &:hover,
+      &:focus,
+      &:active {
+        @apply bg-blue-600 text-blue-50;
+      }
+    }
+  }
+}

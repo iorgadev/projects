@@ -1,0 +1,28 @@
+.hiddensearch {
+  @apply bg-purple-900;
+
+  & .searchcontainer {
+    @apply flex items-center justify-center;
+
+    & input {
+      @apply p-0 w-0 transform transition-all duration-300 h-20 text-4xl text-purple-800 outline-none rounded-l-lg;
+      &.active {
+        @apply px-2 w-80;
+      }
+    }
+
+    & button {
+      @apply bg-purple-200 text-purple-700 h-20 w-20 flex items-center justify-center outline-none rounded-r-lg rounded-l-lg transition-all duration-1000;
+      &:hover,
+      &:focus {
+        @apply bg-purple-400 text-purple-100;
+      }
+      &.active {
+        @apply rounded-l-none duration-75;
+      }
+      svg {
+        @apply h-16 w-16 outline-none;
+      }
+    }
+  }
+}

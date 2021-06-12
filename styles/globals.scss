@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.project {
+  @apply w-screen h-screen text-red-100 flex flex-col justify-center items-center;
+}
+
+h1 {
+  text-shadow: 2px 2px 0px #0c0c0c;
+  @apply text-7xl md:text-9xl uppercase mb-10 font-bold text-center;
+}
+
+@import "./projects/_cardexpander";
+@import "./projects/_steps";
+@import "./projects/_hiddensearch";
+@import "./projects/_gridmover";
+@import "./projects/_blurryload";
+@import "./projects/_splitlanding";

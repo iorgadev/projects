@@ -1,0 +1,7 @@
+.map {
+  @apply grid grid-cols-10;
+}
+
+.tile {
+  @apply w-20 h-20 border flex items-center justify-center;
+}

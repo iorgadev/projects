@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.planet {
+  background-image: url("/images/planets/star-bg.svg");
+  @apply bg-center bg-fixed;
+  background-size: 65%;
+  @apply bg-[#0d0d29] w-screen h-full text-white pb-12;
+
+  & * {
+    font-family: "Space Mono", monospace;
+  }
+
+  & > div {
+    @apply px-5;
+  }
+}
+
+.header {
+  @apply flex flex-row justify-between;
+  @apply p-4;
+  @apply border-b border-gray-700;
+  @apply bg-[#0b0b22];
+
+  &__logo {
+    @apply text-3xl uppercase font-semibold tracking-tighter;
+  }
+
+  &__menu {
+    & > svg {
+      @apply inline;
+    }
+
+    & > ul {
+      @apply hidden;
+    }
+  }
+}
+
+.content {
+  @apply flex flex-col md:flex-row relative;
+
+  &__picture {
+    @apply w-4/5 mt-20 mb-7 md:mt-0 md:mb-7 md:w-4/5 mx-auto;
+    @apply transition-all animate-hover;
+  }
+
+  &__info {
+    @apply flex flex-col mb-7;
+
+    &__details {
+      @apply flex flex-col space-y-4 text-center text-sm;
+
+      & > h1 {
+        @apply mb-0;
+      }
+
+      & > span {
+        @apply text-gray-300;
+      }
+
+      & .sourcelink {
+        // @apply flex;
+        &__title {
+          @apply text-gray-500 font-bold;
+        }
+      }
+    }
+
+    &__submenu {
+      @apply absolute w-full top-0 left-0 flex justify-evenly;
+      @apply uppercase text-sm font-bold tracking-wider text-gray-400;
+      @apply border-b border-gray-700;
+
+      & > li {
+        @apply py-4 px-5 flex-1 text-center;
+      }
+      & > .active {
+        @apply border-b-4 border-purp-500;
+      }
+    }
+  }
+}
+
+.stats {
+  @apply flex flex-col space-y-2;
+
+  & > div {
+    @apply w-full border-2 border-gray-700 border-opacity-50 px-6 py-3;
+    @apply flex justify-between items-center;
+
+    & > span:nth-of-type(1) {
+      @apply tracking-tighter text-xs uppercase;
+    }
+    & > span:nth-of-type(2) {
+      @apply tracking-tighter text-2xl font-bold uppercase;
+    }
+  }
+}

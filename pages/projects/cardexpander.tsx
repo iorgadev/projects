@@ -5,7 +5,7 @@ function CardExpander() {
 
   return (
     <div className="project expander">
-      <h1>Card Expander</h1>
+      <h1 className="">Card Expander</h1>
       <div className="cards">
         <div
           onClick={() => setActive(1)}

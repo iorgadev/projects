@@ -1,0 +1,14 @@
+.imageblurslide {
+  @apply bg-purple-900;
+
+  &__container {
+    @apply w-1/2 flex items-center justify-center overflow-hidden;
+  }
+
+  &__image {
+    // filter: blur(1.5rem);
+
+    @apply transition-all animate-imageblurslide;
+    animation-iteration-count: 1;
+  }
+}

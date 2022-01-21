@@ -1,0 +1,18 @@
+.multirangeslider {
+  @apply bg-gradient-to-tr from-red-900 to-red-600;
+}
+
+.container {
+  @apply flex flex-col items-center justify-center relative;
+
+  & #startRange {
+    @apply w-full z-10;
+    &::-webkit-slider-thumb {
+      @apply appearance-none w-5 h-5;
+    }
+  }
+
+  & #endRange {
+    @apply absolute w-full z-0;
+  }
+}

@@ -19,19 +19,31 @@
   },
   //tailwind
   "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
   "tailwindCSS.emmetCompletions": true,
   "editor.quickSuggestions": {
     "strings": true
   },
   "cSpell.ignoreWords": [
+    "botwave",
+    "checkmark",
     "component",
     "favourite",
     "favourites",
     "get",
+    "iorga's",
     "list",
     "newreleases",
+    "ryerson",
     "spotify",
     "token",
+    "topwave",
     "tracks"
+  ],
+  "cSpell.words": [
+    "font",
+    "iorga",
+    "semibold"
   ]
 }

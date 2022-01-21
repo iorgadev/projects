@@ -1,0 +1,22 @@
+.carddesign {
+  @apply bg-purple-900;
+
+  & .card {
+    @apply w-52 h-80 border-8 flex flex-col items-center justify-center;
+    @apply bg-yellow-600 border-yellow-800;
+
+    &__image {
+      image-rendering: pixelated;
+      filter: drop-shadow(3px 3px 0px #000000);
+      @apply w-40 h-40 border-b-2 mb-4;
+    }
+
+    &__title {
+      @apply font-bold text-xl text-yellow-900;
+    }
+
+    &__description {
+      @apply text-center text-xs px-1 flex-grow flex items-end pb-2;
+    }
+  }
+}

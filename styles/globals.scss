@@ -6,6 +6,9 @@
 @tailwind utilities;
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -15,7 +18,7 @@
 
 h1 {
   text-shadow: 2px 2px 0px #0c0c0c;
-  @apply text-7xl md:text-9xl uppercase mb-10 font-bold text-center;
+  @apply text-4xl md:text-9xl uppercase mb-10 font-bold text-center;
 }
 
 @import "./projects/_cardexpander";
@@ -24,3 +27,7 @@ h1 {
 @import "./projects/_gridmover";
 @import "./projects/_blurryload";
 @import "./projects/_splitlanding";
+@import "./projects/planet";
+@import "./projects/multirangeslider";
+@import "./projects/imageblurslide";
+@import "./projects/carddesign";

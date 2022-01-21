@@ -23,7 +23,7 @@ function HiddenSearch() {
         />
         <button
           onClick={() => toggleSearch()}
-          className={active ? `active` : ``}
+          className={`hover:bg-purp-700 ${active ? `active` : ``}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

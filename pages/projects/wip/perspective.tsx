@@ -4,6 +4,7 @@ import useMouse from "@react-hook/mouse-position";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Stars } from "@react-three/drei";
 import Racer from "../../../components/threeships/racer";
+import Head from "next/head";
 
 export function CustomCursor() {
   const cursorRef = useRef(null);
@@ -123,6 +124,9 @@ function Perspective() {
       className="project perspective"
       // onClick={() => console.log(turnYDegree())}
     >
+      <Head>
+        <title>CSS Perspective with ThreeJS Elements</title>
+      </Head>
       <CustomCursor />
       <div className="perspective__bg"></div>
       <div

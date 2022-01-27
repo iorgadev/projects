@@ -125,7 +125,7 @@ function Perspective() {
       // onClick={() => console.log(turnYDegree())}
     >
       <CustomCursor />
-      <div className="perspective__bg">asd</div>
+      <div className="perspective__bg"></div>
       <div
         className="perspective__menu"
         style={{

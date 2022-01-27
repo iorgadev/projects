@@ -57,8 +57,9 @@ function Rig() {
 interface PerspectiveButtonProps {
   text: string;
   turnY: number;
+  children?: React.ReactChild;
 }
-function PerspectiveButton({ text, turnY }: PerspectiveButtonProps) {
+function PerspectiveButton({ text, turnY, children }: PerspectiveButtonProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -67,24 +68,25 @@ function PerspectiveButton({ text, turnY }: PerspectiveButtonProps) {
       onMouseOver={() => setIsHovered((p) => true)}
       onMouseLeave={() => setIsHovered((p) => false)}
     >
+      {children}
       <span>{text}</span>
       {isHovered ? (
         <>
           <div
             className="perspective__menu__button__holo"
             style={{
-              transform: `rotateX(${0}deg) translateZ(15px)`,
+              transform: `rotateX(${0}deg) translateZ(30px)`,
               top: `${turnY < 0 ? -Math.abs(turnY) : -Math.abs(turnY)}px`,
-              left: `${turnY < 0 ? turnY * 0.5 : turnY * 0.45}px`,
+              left: `${turnY < 0 ? turnY * 0.2 - 20 : turnY * 0.2 - 20}px`,
             }}
           ></div>
           <div
             className="perspective__menu__button__holo"
             style={{
-              transform: `rotateX(${0}deg) translateZ(30px)`,
-              top: `${-Math.abs(turnY)}px`,
-              left: `${turnY}px`,
-              // border: `4px solid blue`,
+              transform: `rotateX(${0}deg) translateZ(50px)`,
+              top: `${-Math.abs(turnY) - 5}px`,
+              left: `${turnY - 20}px`,
+              borderColor: `#00f0bc`,
             }}
           ></div>
         </>
@@ -105,9 +107,9 @@ function Perspective() {
     let deg = 0;
 
     if (mouse.x < middlePoint) {
-      deg = -lerp(20, 0, mouse.x / middlePoint);
+      deg = -lerp(10, 0, mouse.x / middlePoint);
     } else if (mouse.x > middlePoint) {
-      deg = lerp(0, 20, (mouse.x - middlePoint) / middlePoint);
+      deg = lerp(0, 10, (mouse.x - middlePoint) / middlePoint);
     } else {
       deg = 0;
     }
@@ -128,9 +130,42 @@ function Perspective() {
           transform: `rotateY(${turnYDegree()}deg) rotateX(${5}deg)`,
         }}
       >
-        <PerspectiveButton text={"start"} turnY={turnYDegree()} />
-        <PerspectiveButton text={"settings"} turnY={turnYDegree()} />
-        <PerspectiveButton text={"quit"} turnY={turnYDegree()} />
+        <PerspectiveButton text={"start"} turnY={turnYDegree()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+          </svg>
+        </PerspectiveButton>
+        <PerspectiveButton text={"settings"} turnY={turnYDegree()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </PerspectiveButton>
+        <PerspectiveButton text={"quit"} turnY={turnYDegree()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </PerspectiveButton>
       </div>
 
       <div className="perspective__canvas">

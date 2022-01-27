@@ -1,7 +1,7 @@
 .perspective {
   // @apply bg-blue-900;
   // @apply bg-gradient-to-t from-blue-900 to-blue-800;
-  @apply bg-blue-900;
+  @apply bg-gray-900;
   @apply overflow-hidden;
   perspective: 300px;
   cursor: none;
@@ -16,15 +16,25 @@
 
     &__button {
       @apply relative;
-      @apply bg-pink-700 w-full bg-opacity-80;
-      @apply py-6 px-10;
+      @apply flex items-center justify-between space-x-5;
+      @apply bg-hacker-700 w-full bg-opacity-80;
+      @apply py-6 px-5;
       @apply text-center rounded-lg;
-      @apply text-pink-200 text-5xl uppercase font-bold;
-      text-shadow: 2px 2px 0px #ff00bf;
-      @apply shadow-xl shadow-pink-800;
-      @apply border-pink-600 border-4;
+      @apply text-hacker-200 text-5xl uppercase font-bold;
+      text-shadow: 2px 2px 0px #02d8a9;
+      @apply shadow-xl shadow-hacker-800;
+      @apply border-hacker-600 border-4;
 
       perspective: 500px;
+
+      & > svg {
+        // @apply border border-red-500;
+        @apply w-12 h-12;
+      }
+
+      & > span {
+        @apply text-left flex-1;
+      }
 
       &:hover {
         @apply bg-opacity-100;
@@ -33,7 +43,7 @@
       &__holo {
         @apply rounded-lg;
         @apply absolute w-full h-full;
-        @apply border-4 border-pink-600;
+        @apply border-4 border-hacker-500;
       }
     }
   }
@@ -46,25 +56,14 @@
     width: 28px;
     height: 28px;
     // border: 1px solid white;
-    @apply border-4 border-pink-400;
-    @apply text-pink-400;
+    @apply border-4 border-hacker-400;
+    @apply text-hacker-400;
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
     @apply flex items-center justify-center opacity-60;
     z-index: 20;
   }
-  // .cursor::after {
-  //   content: "";
-  //   width: 20px;
-  //   height: 20px;
-  //   position: absolute;
-  //   border: 2px solid blue;
-  //   border-radius: 50%;
-  //   opacity: 0.5;
-  //   top: -8px;
-  //   left: -8px;
-  // }
   @keyframes cursorAnim {
     0% {
       transform: scale(1);

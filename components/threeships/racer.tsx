@@ -48,4 +48,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/craft_racer.glb");
+useGLTF.preload("/models/craft_racer.glb");

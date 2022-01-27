@@ -36,11 +36,6 @@ export const projects = [
   },
   {
     id: 8,
-    name: "Three Ships",
-    url: "wip/threeships",
-  },
-  {
-    id: 9,
     name: "Perspective",
     url: "wip/perspective",
   },

@@ -82,12 +82,11 @@ function PerspectiveButton({ text, turnY, children }: PerspectiveButtonProps) {
             }}
           ></div>
           <div
-            className="perspective__menu__button__holo"
+            className="perspective__menu__button__holo border-hacker-300"
             style={{
               transform: `rotateX(${0}deg) translateZ(50px)`,
               top: `${-Math.abs(turnY) - 5}px`,
               left: `${turnY - 20}px`,
-              borderColor: `#00f0bc`,
             }}
           ></div>
         </>

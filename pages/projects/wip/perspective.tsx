@@ -2,7 +2,8 @@ import React, { useRef, Suspense, useState, useEffect } from "react";
 import * as THREE from "three";
 import useMouse from "@react-hook/mouse-position";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import { Environment, Stars } from "@react-three/drei";
+import Racer from "../../../components/threeships/racer";
 
 export function CustomCursor() {
   const cursorRef = useRef(null);
@@ -36,7 +37,7 @@ export function CustomCursor() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={4}
+          strokeWidth={3}
           d="M12 6v6m0 0v6m0-6h6m-6 0H6"
         />
       </svg>
@@ -124,6 +125,7 @@ function Perspective() {
       // onClick={() => console.log(turnYDegree())}
     >
       <CustomCursor />
+      <div className="perspective__bg">asd</div>
       <div
         className="perspective__menu"
         style={{
@@ -172,6 +174,9 @@ function Perspective() {
         <Canvas camera={{ position: [0, 0, 0] }}>
           <Suspense fallback={null}>
             <Stars />
+            {/* <spotLight position={[0, 5, 0]} />
+            <Environment preset="sunset" />
+            <Racer /> */}
           </Suspense>
           <Rig />
         </Canvas>

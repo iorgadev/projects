@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
   const group = useRef();
+  /* @ts-ignore */
   const { nodes, materials } = useGLTF("/models/craft_racer.glb");
   // useFrame(() => {
   //   group.current.rotation.y += 0.003;

@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <a href="https://github.com/iorgadev/fragments"><img src="https://user-images.githubusercontent.com/2624432/151440108-dd2262b8-b23e-460a-b257-28c97748ae8c.png" alt="Projects" width="192"></a>
+  <br>
+  Projects
+  <br>
+</h1>
 
-## Getting Started
+<h4 align="center">A collection of mini projects I&apos;ve worked on.</h4>
 
-First, run the development server:
+<!-- <p align="center">
+  <a href="https://github.com/iorgadev/fragments/blob/main/package.json">
+    <img src="https://img.shields.io/badge/Version:-0.0.1-green"
+         alt="Repo Version">
+  </a>
+</p> -->
+
+<p align="center" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;white-space:nowrap;">
+  <a href="#key-features">📦 Features</a>
+  <a href="#how-to-use">▶️ How To Run</a> 
+  <a href="#credits">📑 Credits</a> 
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/2624432/151442849-37ebea7c-26df-452a-a563-1dacab64d5ec.jpg" alt="projects screenshot" />
+</p>
+
+<hr/>
+
+## 📦 Projects
+
+- Card Expander
+- Multi Steps
+- Hidden Search
+- Split Landing Page
+- Blurry Loader
+- Drag Drop File Upload
+- Image BlurSlide
+- Perspective
+- [See them all on the hosted demo page](https://miniprjs.vercel.app)
+
+## ▶️ How To Run
+
+To clone and run the Fragments microservice, you'll need [Git](https://git-scm.com). From your command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone the repository
+$ git clone https://github.com/iorgadev/projects
+
+# Go into the repository folder
+$ cd projects
+
+# Install dependencies
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Development &amp; Debugging:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+# Run NextJS in developer mode
+$ npm run dev
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📑 Credits
 
-## Learn More
+This repo uses the following open source packages:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [NextJS](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [ThreeJS](https://threejs.org/)

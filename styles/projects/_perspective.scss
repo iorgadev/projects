@@ -11,7 +11,7 @@
     @apply bg-cover bg-repeat z-30 opacity-20 bg-hacker-700 bg-blend-multiply;
     @apply pointer-events-none;
     background-size: 50%;
-    background-image: url("/images/perspective/scanlines-3.png");
+    background-image: url("/images/perspective/scanlines-3.png") !important;
   }
 
   &__menu {

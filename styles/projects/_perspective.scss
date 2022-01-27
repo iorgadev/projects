@@ -21,6 +21,8 @@
     @apply z-10;
     @apply flex flex-col space-y-3;
     @apply w-96;
+    // @apply right-20;
+    // @apply border-2 border-red-500;
 
     &__button {
       @apply relative;

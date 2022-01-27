@@ -1,129 +1,31 @@
-import React, { useRef, Suspense, useState, useEffect } from "react";
-import * as THREE from "three";
+import React, { useRef, Suspense } from "react";
+import Head from "next/head";
 import useMouse from "@react-hook/mouse-position";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Environment, Stars } from "@react-three/drei";
 import Racer from "../../../components/threeships/racer";
-import Head from "next/head";
+import CustomCursor from "../../../components/perspective/CustomCursor";
+import Rig from "../../../components/perspective/Rig";
+import PerspectiveButton from "../../../components/perspective/PerspectiveButton";
 
-export function CustomCursor() {
-  const cursorRef = useRef(null);
-  useEffect(() => {
-    if (cursorRef.current == null || cursorRef == null) return;
-    document.addEventListener("mousemove", (e) => {
-      if (cursorRef.current == null) return;
-      cursorRef.current.setAttribute(
-        "style",
-        "top: " + e.pageY + "px; left: " + e.pageX + "px;"
-      );
-    });
-    document.addEventListener("click", () => {
-      if (cursorRef.current == null) return;
-      cursorRef.current.classList.add("expand");
-      setTimeout(() => {
-        if (cursorRef.current == null) return;
-        cursorRef.current.classList.remove("expand");
-      }, 500);
-    });
-  }, []);
-  return (
-    <div className="cursor" ref={cursorRef}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-4 h-4"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
-    </div>
-  );
-}
+export default function Perspective() {
+  const container = useRef(null);
+  const mouse = useMouse(container);
 
-function Rig() {
-  const { camera, mouse } = useThree();
-  const vec = new THREE.Vector3();
-  return useFrame(() =>
-    camera.position.lerp(
-      vec.set(mouse.x * 25, mouse.y * 10, camera.position.z),
-      0.02
-    )
-  );
-}
-interface PerspectiveButtonProps {
-  text: string;
-  turnY: number;
-  children?: React.ReactChild;
-}
-function PerspectiveButton({ text, turnY, children }: PerspectiveButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      className="perspective__menu__button"
-      onMouseOver={() => setIsHovered((p) => true)}
-      onMouseLeave={() => setIsHovered((p) => false)}
-    >
-      {children}
-      <span>{text}</span>
-      {isHovered ? (
-        <>
-          <div
-            className="perspective__menu__button__holo"
-            style={{
-              transform: `rotateX(${0}deg) translateZ(30px)`,
-              top: `${turnY < 0 ? -Math.abs(turnY) : -Math.abs(turnY)}px`,
-              left: `${turnY < 0 ? turnY * 0.2 - 20 : turnY * 0.2 - 20}px`,
-            }}
-          ></div>
-          <div
-            className="perspective__menu__button__holo border-hacker-300"
-            style={{
-              transform: `rotateX(${0}deg) translateZ(50px)`,
-              top: `${-Math.abs(turnY) - 5}px`,
-              left: `${turnY - 20}px`,
-            }}
-          ></div>
-        </>
-      ) : null}
-    </div>
-  );
-}
-
-function Perspective() {
-  const ref = useRef(null);
-  const mouse = useMouse(ref);
-
+  // interpolate mouse position to set value in range
   const lerp = (x, y, a) => x * (1 - a) + y * a;
 
+  // turn menu based on mouse position
   const turnYDegree = () => {
-    let maxWidth = ref.current ? ref.current.offsetWidth : 0;
+    let maxWidth = container.current ? container.current.offsetWidth : 0;
     let middlePoint = maxWidth / 2;
-    let deg = 0;
-
-    if (mouse.x < middlePoint) {
-      deg = -lerp(10, 0, mouse.x / middlePoint);
-    } else if (mouse.x > middlePoint) {
-      deg = lerp(0, 10, (mouse.x - middlePoint) / middlePoint);
-    } else {
-      deg = 0;
-    }
-
-    return deg;
+    return mouse.x < middlePoint
+      ? -lerp(10, 0, mouse.x / middlePoint)
+      : lerp(0, 10, (mouse.x - middlePoint) / middlePoint);
   };
 
   return (
-    <div
-      ref={ref}
-      className="project perspective"
-      // onClick={() => console.log(turnYDegree())}
-    >
+    <div ref={container} className="project perspective">
       <Head>
         <title>CSS Perspective with ThreeJS Elements</title>
       </Head>
@@ -160,7 +62,6 @@ function Perspective() {
         <PerspectiveButton text={"quit"} turnY={turnYDegree()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -187,5 +88,3 @@ function Perspective() {
     </div>
   );
 }
-
-export default Perspective;

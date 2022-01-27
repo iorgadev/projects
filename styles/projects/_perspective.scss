@@ -29,7 +29,7 @@
       @apply py-6 px-5;
       @apply text-center rounded-lg;
       @apply text-hacker-200 text-5xl uppercase font-bold;
-      text-shadow: 2px 2px 0px #02d8a9;
+      text-shadow: 2px 2px 0px #002e24;
       @apply shadow-xl shadow-hacker-800;
       @apply border-hacker-600 border-4;
 
@@ -38,6 +38,7 @@
       & > svg {
         // @apply border border-red-500;
         @apply w-12 h-12;
+        filter: drop-shadow(2px 2px 0px #002e24);
       }
 
       & > span {

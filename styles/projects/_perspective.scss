@@ -1,0 +1,42 @@
+.perspective {
+  // @apply bg-blue-900;
+  // @apply bg-gradient-to-t from-blue-900 to-blue-800;
+  @apply bg-blue-900;
+  @apply overflow-hidden;
+  perspective: 300px;
+
+  &__menu {
+    // @apply bg-blue-500 p-3;
+    // @apply w-60;
+    // @apply h-72;
+    @apply z-10;
+    @apply flex flex-col space-y-3;
+    @apply w-96;
+
+    &__button {
+      @apply relative;
+      @apply bg-pink-700 w-full bg-opacity-80;
+      @apply py-6 px-10;
+      @apply text-center rounded-lg;
+      @apply text-pink-200 text-5xl uppercase font-bold;
+      @apply shadow-2xl;
+      @apply border-pink-600 border-4;
+
+      perspective: 500px;
+
+      &:hover {
+        @apply bg-opacity-100;
+      }
+
+      &__holo {
+        @apply rounded-lg;
+        @apply absolute w-full h-full;
+        @apply border-4 border-pink-600;
+      }
+    }
+  }
+
+  &__canvas {
+    @apply absolute w-full h-full z-0;
+  }
+}

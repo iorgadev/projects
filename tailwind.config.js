@@ -5,9 +5,15 @@ module.exports = {
     "./pages/projects/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat"],
+        roboto: ["Roboto Condensed"],
+      },
+      screens: {
+        "3xl": "1920px",
+      },
       colors: {
         purp: {
           100: "#deccf0",
@@ -19,6 +25,28 @@ module.exports = {
           700: "#37006b",
           800: "#250048",
           900: "#120024",
+        },
+        hacker: {
+          100: "#cdf9f5",
+          200: "#9bf4eb",
+          300: "#69eee0",
+          400: "#37e9d6",
+          500: "#05e3cc",
+          600: "#04b6a3",
+          700: "#03887a",
+          800: "#025b52",
+          900: "#012d29",
+        },
+        darker: {
+          100: "#ccdedc",
+          200: "#9abdba",
+          300: "#679d97",
+          400: "#357c75",
+          500: "#025b52",
+          600: "#024942",
+          700: "#013731",
+          800: "#012421",
+          900: "#001210",
         },
       },
 

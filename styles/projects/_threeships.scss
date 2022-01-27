@@ -1,0 +1,42 @@
+.three {
+  @apply w-screen h-screen relative;
+  @apply overflow-hidden;
+  @apply bg-hacker-900;
+
+  & * {
+    @apply text-hacker-500 uppercase font-roboto;
+  }
+
+  & > .canvas {
+    @apply absolute w-full h-full;
+  }
+  & > .ui {
+    @apply absolute w-full h-full;
+
+    /* header */
+    & > .header {
+      @apply relative w-full z-10;
+      @apply flex items-center justify-center;
+      @apply py-4 px-4 bg-darker-800;
+      @apply border-b-2 border-hacker-500;
+
+      & > .content {
+        @apply max-w-5xl w-full;
+        // @apply border-2 border-green-500;
+      }
+    }
+
+    & > .stats {
+      // @apply flex;
+
+      &__content {
+        & > h1 {
+          @apply text-red-500;
+        }
+        // @apply flex-1 right-0;
+        @apply w-full h-full;
+        @apply border-2 border-red-500;
+      }
+    }
+  }
+}

@@ -7,13 +7,6 @@
 
 <h4 align="center">A collection of mini projects I&apos;ve worked on.</h4>
 
-<!-- <p align="center">
-  <a href="https://github.com/iorgadev/fragments/blob/main/package.json">
-    <img src="https://img.shields.io/badge/Version:-0.0.1-green"
-         alt="Repo Version">
-  </a>
-</p> -->
-
 <p align="center" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;white-space:nowrap;">
   <a href="#key-features">📦 Features</a>
   <a href="#how-to-use">▶️ How To Run</a> 

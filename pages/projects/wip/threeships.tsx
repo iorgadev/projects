@@ -40,6 +40,7 @@ function ThreeShips() {
       <div className="canvas">
         <Canvas>
           <Suspense fallback={null}>
+            {/* @ts-ignore */}
             <OrbitControls />
             <Stars />
             {/* <ambientLight intensity={3.9} /> */}

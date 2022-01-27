@@ -34,4 +34,14 @@ export const projects = [
     name: "Image BlurSlide",
     url: "wip/imageblurslide",
   },
+  {
+    id: 8,
+    name: "Three Ships",
+    url: "wip/threeships",
+  },
+  {
+    id: 9,
+    name: "Perspective",
+    url: "wip/perspective",
+  },
 ];

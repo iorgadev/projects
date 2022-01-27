@@ -29,7 +29,7 @@ export function CustomCursor() {
     <div className="cursor" ref={cursorRef}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6"
+        className="w-4 h-4"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -37,8 +37,8 @@ export function CustomCursor() {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth={3}
-          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+          strokeWidth={2}
+          d="M6 18L18 6M6 6l12 12"
         />
       </svg>
     </div>
@@ -174,9 +174,9 @@ function Perspective() {
         <Canvas camera={{ position: [0, 0, 0] }}>
           <Suspense fallback={null}>
             <Stars />
-            {/* <spotLight position={[0, 5, 0]} />
+            <spotLight position={[-25, 0, -50]} scale={10} />
             <Environment preset="sunset" />
-            <Racer /> */}
+            <Racer />
           </Suspense>
           <Rig />
         </Canvas>

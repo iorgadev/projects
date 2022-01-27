@@ -7,11 +7,18 @@ export default function Model(props) {
   /* @ts-ignore */
   const { nodes, materials } = useGLTF("/models/craft_racer.glb");
   // useFrame(() => {
-  //   group.current.rotation.y += 0.003;
+  //   // group.current.rotation.y += 0.003;
+  //   // let position = { x: group.current.position.x, y: group.current.position.y };
+  //   let direction = "up";
+  //   if (direction == "up") group.current.position.y += 0.005;
+  //   else group.current.position.y -= 0.01;
+
+  //   group.current.position.y += group.current.position.y < 2 ? 0.01 : -0.01;
+  //   // console.log(group.current.position.y);
   // });
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[0, 0, 0]}>
+      <group position={[-25, -10, -50]} scale={16} rotation={[0, -2.2, 0]}>
         <mesh
           castShadow
           receiveShadow

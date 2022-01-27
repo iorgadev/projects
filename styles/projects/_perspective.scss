@@ -44,7 +44,9 @@
         @apply text-left flex-1;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
+        @apply text-white;
         @apply bg-opacity-100;
       }
 
@@ -63,13 +65,9 @@
   .cursor {
     width: 28px;
     height: 28px;
-    // border: 1px solid white;
-    @apply border-2 border-hacker-400;
-    @apply text-hacker-400;
+    @apply border-2 border-hacker-100;
+    @apply text-hacker-100;
     @apply rounded-md;
-    // @apply shadow-md shadow-hacker-500;
-    // @apply shadow-inner shadow-hacker-400;
-    // border-radius: 75%;
     position: absolute;
     pointer-events: none;
     @apply flex items-center justify-center opacity-60;

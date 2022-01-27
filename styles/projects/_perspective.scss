@@ -4,6 +4,7 @@
   @apply bg-blue-900;
   @apply overflow-hidden;
   perspective: 300px;
+  cursor: none;
 
   &__menu {
     // @apply bg-blue-500 p-3;
@@ -19,7 +20,8 @@
       @apply py-6 px-10;
       @apply text-center rounded-lg;
       @apply text-pink-200 text-5xl uppercase font-bold;
-      @apply shadow-2xl;
+      text-shadow: 2px 2px 0px #ff00bf;
+      @apply shadow-xl shadow-pink-800;
       @apply border-pink-600 border-4;
 
       perspective: 500px;
@@ -38,5 +40,44 @@
 
   &__canvas {
     @apply absolute w-full h-full z-0;
+  }
+
+  .cursor {
+    width: 28px;
+    height: 28px;
+    // border: 1px solid white;
+    @apply border-4 border-pink-400;
+    @apply text-pink-400;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    @apply flex items-center justify-center opacity-60;
+    z-index: 20;
+  }
+  // .cursor::after {
+  //   content: "";
+  //   width: 20px;
+  //   height: 20px;
+  //   position: absolute;
+  //   border: 2px solid blue;
+  //   border-radius: 50%;
+  //   opacity: 0.5;
+  //   top: -8px;
+  //   left: -8px;
+  // }
+  @keyframes cursorAnim {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(2);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  .expand {
+    animation: cursorAnim 0.5s forwards;
   }
 }
